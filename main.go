@@ -39,14 +39,23 @@ func main() {
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:  "I",
-			pronoun.My: "my",
+			pronoun.I:   "I",
+			pronoun.My:  "my",
+			pronoun.You: "you",
+			pronoun.How: "how",
 		},
-		Verbs: map[verb.Type]string{
-			verb.ToBeCalled: "am called",
-			verb.ToBe:       "is",
-		},
+		Verbs:        map[verb.Type]string{},
 		VerbSuffixes: map[pronoun.Type]string{},
+		VerbsIrregular: map[verb.Type]map[pronoun.Type]string{
+			verb.ToBeCalled: {
+				pronoun.I:   "am called",
+				pronoun.You: "are called",
+			},
+			verb.ToBe: {
+				pronoun.My:  "is",
+				pronoun.You: "are",
+			},
+		},
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
 			noun.Name:       "name",

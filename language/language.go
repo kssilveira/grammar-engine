@@ -7,10 +7,11 @@ import (
 )
 
 type Type struct {
-	Pronouns     map[pronoun.Type]string
-	Verbs        map[verb.Type]string
-	VerbSuffixes map[pronoun.Type]string
-	Nouns        map[noun.Type]string
+	Pronouns       map[pronoun.Type]string
+	Verbs          map[verb.Type]string
+	VerbSuffixes   map[pronoun.Type]string
+	VerbsIrregular map[verb.Type]map[pronoun.Type]string
+	Nouns          map[noun.Type]string
 }
 
 func (t Type) Pronoun(p pronoun.Type) string {
@@ -18,6 +19,9 @@ func (t Type) Pronoun(p pronoun.Type) string {
 }
 
 func (t Type) Verb(v verb.Type, p pronoun.Type) string {
+	if verb, ok := t.VerbsIrregular[v]; ok {
+		return verb[p]
+	}
 	return t.Verbs[v] + t.VerbSuffixes[p]
 }
 
