@@ -25,8 +25,12 @@ func (t Type) On(l language.Type) string {
 		l.Verb(t.Verb, t.Pronoun),
 		{l.Noun(t.Object)},
 	}
+	beginning := ""
 	end := "."
 	if t.Question != "" {
+		if l.IsUpsideDownQuestionMark {
+			beginning = "¿"
+		}
 		verb := l.Verb(t.Verb, t.Pronoun)
 		words = [][]string{
 			{capitalizeFirst(l.Pronoun(t.Question)), verb[0], l.Pronoun(t.Pronoun), verb[1]},
@@ -46,7 +50,7 @@ func (t Type) On(l language.Type) string {
 			}
 		}
 	}
-	return strings.Join(valid, " ") + end + "\n"
+	return beginning + strings.Join(valid, " ") + end + "\n"
 }
 
 func capitalizeFirst(s string) string {

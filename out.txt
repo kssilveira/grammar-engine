@@ -2,7 +2,7 @@
 Ich heiße Rafael.
 I am called Rafael.
 Je m'appelle Rafael.
-Me llamo Rafael.
+Yo me llamo Rafael.
 Eu me chamo Rafael.
 
 Mein Name ist Rafael.
@@ -14,5 +14,5 @@ Meu nome é Rafael.
 Wie heißen Sie?
 How are you called?
 Comment vous appelez-vous?
-llamo?
+¿Cómo se llama usted?
 me chamo?

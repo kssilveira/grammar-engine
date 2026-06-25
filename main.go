@@ -85,18 +85,27 @@ func main() {
 		IsQuestionPronounBeforeVerb: true,
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:  "me",
-			pronoun.My: "mi",
+			pronoun.I:   "yo",
+			pronoun.My:  "mi",
+			pronoun.You: "usted",
+			pronoun.How: "cómo",
 		},
-		Verbs: map[verb.Type]string{
-			verb.ToBeCalled: "llamo",
-			verb.ToBe:       "es",
-		},
+		Verbs:        map[verb.Type]string{},
 		VerbSuffixes: map[pronoun.Type]string{},
+		VerbsIrregular: map[verb.Type]map[pronoun.Type]string{
+			verb.ToBeCalled: {
+				pronoun.I:   "me llamo",
+				pronoun.You: "se llama",
+			},
+			verb.ToBe: {
+				pronoun.My: "es",
+			},
+		},
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
 			noun.Name:       "nombre",
 		},
+		IsUpsideDownQuestionMark: true,
 	}, {
 		Pronouns: map[pronoun.Type]string{
 			pronoun.I:  "eu",

@@ -14,6 +14,7 @@ type Type struct {
 	VerbsPassive                map[verb.Type]string
 	Nouns                       map[noun.Type]string
 	IsQuestionPronounBeforeVerb bool
+	IsUpsideDownQuestionMark    bool
 }
 
 func (t Type) Pronoun(p pronoun.Type) string {
