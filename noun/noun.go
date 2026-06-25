@@ -5,4 +5,5 @@ type Type string
 const (
 	Name       Type = "name"
 	PersonName Type = "person-name"
+	Please     Type = "please"
 )

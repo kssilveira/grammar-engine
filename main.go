@@ -19,6 +19,8 @@ func main() {
 		Pronoun: pronoun.You, Verb: verb.ToBeCalled, Question: pronoun.How,
 	}, {
 		Pronoun: pronoun.Your, Subject: noun.Name, Verb: verb.ToBe, Question: pronoun.How,
+	}, {
+		Subject: noun.Please, Question: pronoun.How,
 	}}
 	languages := []language.Type{{
 		Pronouns: map[pronoun.Type]string{
@@ -39,6 +41,7 @@ func main() {
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
 			noun.Name:       "Name",
+			noun.Please:     "bitte",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
@@ -64,6 +67,7 @@ func main() {
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
 			noun.Name:       "name",
+			noun.Please:     "please",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
@@ -88,6 +92,7 @@ func main() {
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
 			noun.Name:       "nom",
+			noun.Please:     "s'il vous plaît",
 		},
 		IsQuestionPronounBeforeVerb: true,
 	}, {
@@ -113,6 +118,7 @@ func main() {
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
 			noun.Name:       "nombre",
+			noun.Please:     "por favor",
 		},
 		IsUpsideDownQuestionMark: true,
 	}, {
@@ -140,6 +146,7 @@ func main() {
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
 			noun.Name:       "nome",
+			noun.Please:     "por favor",
 		},
 		IsQuestionPronounBeforeVerb: true,
 	}}
