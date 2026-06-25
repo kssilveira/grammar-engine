@@ -1,8 +1,6 @@
 package language
 
 import (
-	"fmt"
-
 	"github.com/kssilveira/grammar-engine/noun"
 	"github.com/kssilveira/grammar-engine/pronoun"
 	"github.com/kssilveira/grammar-engine/verb"
@@ -21,7 +19,7 @@ func (t Type) Pronoun(p pronoun.Type) string {
 	return t.Pronouns[p]
 }
 
-func (t Type) Verb(v verb.Type, p pronoun.Type) string {
+func (t Type) Verb(v verb.Type, p pronoun.Type) []string {
 	passive, ok := t.VerbsPassive[v]
 	if ok {
 		v = verb.ToBe
@@ -30,10 +28,7 @@ func (t Type) Verb(v verb.Type, p pronoun.Type) string {
 	if verb, ok := t.VerbsIrregular[v]; ok {
 		res = verb[p]
 	}
-	if passive != "" {
-		return fmt.Sprintf("%s %s", res, passive)
-	}
-	return res
+	return []string{res, passive}
 }
 
 func (t Type) Noun(n noun.Type) string {
