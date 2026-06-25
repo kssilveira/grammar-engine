@@ -35,7 +35,7 @@ func (t Type) On(l language.Type) string {
 		words = [][]string{
 			{capitalizeFirst(l.Pronoun(t.Question)), verb[0], l.Pronoun(t.Pronoun), l.Noun(t.Subject), verb[1]},
 		}
-		if l.IsQuestionPronounBeforeVerb {
+		if l.IsQuestionPronounBeforeVerb && strings.ContainsAny(verb[0], "- ") {
 			words = [][]string{
 				{capitalizeFirst(l.Pronoun(t.Question)), l.Pronoun(t.Pronoun), l.Noun(t.Subject), verb[0], verb[1]},
 			}
