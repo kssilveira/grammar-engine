@@ -22,10 +22,11 @@ func main() {
 	}}
 	languages := []language.Type{{
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:   "ich",
-			pronoun.My:  "mein",
-			pronoun.You: "Sie",
-			pronoun.How: "wie",
+			pronoun.I:    "ich",
+			pronoun.My:   "mein",
+			pronoun.You:  "Sie",
+			pronoun.Your: "Ihr",
+			pronoun.How:  "wie",
 		},
 		Verbs: map[verb.Type]string{
 			verb.ToBeCalled: "heiß",
@@ -41,10 +42,11 @@ func main() {
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:   "I",
-			pronoun.My:  "my",
-			pronoun.You: "you",
-			pronoun.How: "how",
+			pronoun.I:    "I",
+			pronoun.My:   "my",
+			pronoun.You:  "you",
+			pronoun.Your: "your",
+			pronoun.How:  "how",
 		},
 		Verbs:        map[verb.Type]string{},
 		VerbSuffixes: map[pronoun.Type]string{},
@@ -53,9 +55,10 @@ func main() {
 		},
 		VerbsIrregular: map[verb.Type]map[pronoun.Type]string{
 			verb.ToBe: {
-				pronoun.I:   "am",
-				pronoun.My:  "is",
-				pronoun.You: "are",
+				pronoun.I:    "am",
+				pronoun.My:   "is",
+				pronoun.Your: "is",
+				pronoun.You:  "are",
 			},
 		},
 		Nouns: map[noun.Type]string{
@@ -64,10 +67,11 @@ func main() {
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:   "je",
-			pronoun.My:  "mon",
-			pronoun.You: "vous",
-			pronoun.How: "comment",
+			pronoun.I:    "je",
+			pronoun.My:   "mon",
+			pronoun.You:  "vous",
+			pronoun.Your: "votre",
+			pronoun.How:  "comment",
 		},
 		Verbs:        map[verb.Type]string{},
 		VerbSuffixes: map[pronoun.Type]string{},
@@ -77,7 +81,8 @@ func main() {
 				pronoun.You: "appelez-vous",
 			},
 			verb.ToBe: {
-				pronoun.My: "est",
+				pronoun.My:   "est",
+				pronoun.Your: "est",
 			},
 		},
 		Nouns: map[noun.Type]string{
@@ -87,10 +92,11 @@ func main() {
 		IsQuestionPronounBeforeVerb: true,
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:   "yo",
-			pronoun.My:  "mi",
-			pronoun.You: "usted",
-			pronoun.How: "cómo",
+			pronoun.I:    "yo",
+			pronoun.My:   "mi",
+			pronoun.You:  "usted",
+			pronoun.Your: "su",
+			pronoun.How:  "cómo",
 		},
 		Verbs:        map[verb.Type]string{},
 		VerbSuffixes: map[pronoun.Type]string{},
@@ -100,7 +106,8 @@ func main() {
 				pronoun.You: "se llama",
 			},
 			verb.ToBe: {
-				pronoun.My: "es",
+				pronoun.My:   "es",
+				pronoun.Your: "es",
 			},
 		},
 		Nouns: map[noun.Type]string{
@@ -110,10 +117,11 @@ func main() {
 		IsUpsideDownQuestionMark: true,
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:   "eu",
-			pronoun.My:  "meu",
-			pronoun.You: "você",
-			pronoun.How: "como",
+			pronoun.I:    "eu",
+			pronoun.My:   "meu",
+			pronoun.You:  "você",
+			pronoun.Your: "seu",
+			pronoun.How:  "como",
 		},
 		Verbs: map[verb.Type]string{
 			verb.ToBeCalled: "me chamo",
@@ -125,7 +133,8 @@ func main() {
 				pronoun.You: "se chama",
 			},
 			verb.ToBe: {
-				pronoun.My: "é",
+				pronoun.My:   "é",
+				pronoun.Your: "é",
 			},
 		},
 		Nouns: map[noun.Type]string{

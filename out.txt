@@ -17,8 +17,8 @@ Comment vous appelez-vous?
 ¿Cómo se llama usted?
 Como você se chama?
 
-Wie ist?
-How?
-Comment?
-¿Cómo?
-Como?
+Wie ist Ihr Name?
+How is your name?
+Comment votre nom est?
+¿Cómo es su nombre?
+Como seu nome é?
