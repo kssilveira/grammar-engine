@@ -20,15 +20,18 @@ func main() {
 	}}
 	languages := []language.Type{{
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:  "ich",
-			pronoun.My: "mein",
+			pronoun.I:   "ich",
+			pronoun.My:  "mein",
+			pronoun.You: "Sie",
+			pronoun.How: "wie",
 		},
 		Verbs: map[verb.Type]string{
 			verb.ToBeCalled: "heiß",
 			verb.ToBe:       "ist",
 		},
 		VerbSuffixes: map[pronoun.Type]string{
-			pronoun.I: "e",
+			pronoun.I:   "e",
+			pronoun.You: "en",
 		},
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
