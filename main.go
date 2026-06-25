@@ -46,12 +46,12 @@ func main() {
 		},
 		Verbs:        map[verb.Type]string{},
 		VerbSuffixes: map[pronoun.Type]string{},
+		VerbsPassive: map[verb.Type]string{
+			verb.ToBeCalled: "called",
+		},
 		VerbsIrregular: map[verb.Type]map[pronoun.Type]string{
-			verb.ToBeCalled: {
-				pronoun.I:   "am called",
-				pronoun.You: "are called",
-			},
 			verb.ToBe: {
+				pronoun.I:   "am",
 				pronoun.My:  "is",
 				pronoun.You: "are",
 			},

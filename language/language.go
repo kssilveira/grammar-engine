@@ -1,6 +1,8 @@
 package language
 
 import (
+	"fmt"
+
 	"github.com/kssilveira/grammar-engine/noun"
 	"github.com/kssilveira/grammar-engine/pronoun"
 	"github.com/kssilveira/grammar-engine/verb"
@@ -11,6 +13,7 @@ type Type struct {
 	Verbs          map[verb.Type]string
 	VerbSuffixes   map[pronoun.Type]string
 	VerbsIrregular map[verb.Type]map[pronoun.Type]string
+	VerbsPassive   map[verb.Type]string
 	Nouns          map[noun.Type]string
 }
 
@@ -19,10 +22,18 @@ func (t Type) Pronoun(p pronoun.Type) string {
 }
 
 func (t Type) Verb(v verb.Type, p pronoun.Type) string {
-	if verb, ok := t.VerbsIrregular[v]; ok {
-		return verb[p]
+	passive, ok := t.VerbsPassive[v]
+	if ok {
+		v = verb.ToBe
 	}
-	return t.Verbs[v] + t.VerbSuffixes[p]
+	res := t.Verbs[v] + t.VerbSuffixes[p]
+	if verb, ok := t.VerbsIrregular[v]; ok {
+		res = verb[p]
+	}
+	if passive != "" {
+		return fmt.Sprintf("%s %s", res, passive)
+	}
+	return res
 }
 
 func (t Type) Noun(n noun.Type) string {
