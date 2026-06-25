@@ -76,14 +76,17 @@ func main() {
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I: "eu",
+			pronoun.I:  "eu",
+			pronoun.My: "meu",
 		},
 		Verbs: map[verb.Type]string{
 			verb.ToBeCalled: "me chamo",
+			verb.ToBe:       "é",
 		},
 		VerbSuffixes: map[pronoun.Type]string{},
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
+			noun.Name:       "nome",
 		},
 	}}
 	for _, phrase := range phrases {
