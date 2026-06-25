@@ -5,12 +5,8 @@ import (
 	"strings"
 	"unicode"
 	"unicode/utf8"
-)
 
-type Pronoun string
-
-const (
-	PronounI = "I"
+	"github.com/kssilveira/grammar-engine/pronoun"
 )
 
 type Verb string
@@ -26,7 +22,7 @@ const (
 )
 
 type Sentence struct {
-	Pronoun Pronoun
+	Pronoun pronoun.Type
 	Verb    Verb
 	Object  Noun
 }
@@ -40,17 +36,17 @@ func (s Sentence) On(l Language) string {
 }
 
 type Language struct {
-	Pronouns     map[Pronoun]string
+	Pronouns     map[pronoun.Type]string
 	Verbs        map[Verb]string
-	VerbSuffixes map[Pronoun]string
+	VerbSuffixes map[pronoun.Type]string
 	Nouns        map[Noun]string
 }
 
-func (l Language) Pronoun(p Pronoun) string {
+func (l Language) Pronoun(p pronoun.Type) string {
 	return l.Pronouns[p]
 }
 
-func (l Language) Verb(v Verb, p Pronoun) string {
+func (l Language) Verb(v Verb, p pronoun.Type) string {
 	return l.Verbs[v] + l.VerbSuffixes[p]
 }
 
@@ -68,17 +64,17 @@ func CapitalizeFirst(s string) string {
 
 func main() {
 	sentences := []Sentence{{
-		Pronoun: PronounI, Verb: VerbToBeCalled, Object: NounName,
+		Pronoun: pronoun.I, Verb: VerbToBeCalled, Object: NounName,
 	}}
 	languages := []Language{{
-		Pronouns: map[Pronoun]string{
-			PronounI: "ich",
+		Pronouns: map[pronoun.Type]string{
+			pronoun.I: "ich",
 		},
 		Verbs: map[Verb]string{
 			VerbToBeCalled: "heiß",
 		},
-		VerbSuffixes: map[Pronoun]string{
-			PronounI: "e",
+		VerbSuffixes: map[pronoun.Type]string{
+			pronoun.I: "e",
 		},
 		Nouns: map[Noun]string{
 			NounName: "Rafael",
