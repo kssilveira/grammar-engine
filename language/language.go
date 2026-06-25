@@ -7,12 +7,13 @@ import (
 )
 
 type Type struct {
-	Pronouns       map[pronoun.Type]string
-	Verbs          map[verb.Type]string
-	VerbSuffixes   map[pronoun.Type]string
-	VerbsIrregular map[verb.Type]map[pronoun.Type]string
-	VerbsPassive   map[verb.Type]string
-	Nouns          map[noun.Type]string
+	Pronouns                    map[pronoun.Type]string
+	Verbs                       map[verb.Type]string
+	VerbSuffixes                map[pronoun.Type]string
+	VerbsIrregular              map[verb.Type]map[pronoun.Type]string
+	VerbsPassive                map[verb.Type]string
+	Nouns                       map[noun.Type]string
+	IsQuestionPronounBeforeVerb bool
 }
 
 func (t Type) Pronoun(p pronoun.Type) string {
