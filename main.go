@@ -21,6 +21,8 @@ func main() {
 		Pronoun: pronoun.Your, Subject: noun.Name, Verb: verb.ToBe, Question: pronoun.How,
 	}, {
 		Subject: noun.Please, Question: pronoun.How,
+	}, {
+		Pronoun: pronoun.I, Verb: verb.ToBe, Object: noun.PersonName,
 	}}
 	languages := []language.Type{{
 		Pronouns: map[pronoun.Type]string{
@@ -37,6 +39,13 @@ func main() {
 		VerbSuffixes: map[pronoun.Type]string{
 			pronoun.I:   "e",
 			pronoun.You: "en",
+		},
+		VerbsIrregular: map[verb.Type]map[pronoun.Type]string{
+			verb.ToBe: {
+				pronoun.I:    "bin",
+				pronoun.My:   "ist",
+				pronoun.Your: "ist",
+			},
 		},
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
@@ -85,6 +94,7 @@ func main() {
 				pronoun.You: "appelez-vous",
 			},
 			verb.ToBe: {
+				pronoun.I:    "suis",
 				pronoun.My:   "est",
 				pronoun.Your: "est",
 			},
@@ -111,6 +121,7 @@ func main() {
 				pronoun.You: "se llama",
 			},
 			verb.ToBe: {
+				pronoun.I:    "soy",
 				pronoun.My:   "es",
 				pronoun.Your: "es",
 			},
@@ -139,6 +150,7 @@ func main() {
 				pronoun.You: "se chama",
 			},
 			verb.ToBe: {
+				pronoun.I:    "sou",
 				pronoun.My:   "é",
 				pronoun.Your: "é",
 			},
