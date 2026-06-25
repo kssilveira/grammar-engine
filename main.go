@@ -27,6 +27,17 @@ func main() {
 		Nouns: map[noun.Type]string{
 			noun.Name: "Rafael",
 		},
+	}, {
+		Pronouns: map[pronoun.Type]string{
+			pronoun.I: "I",
+		},
+		Verbs: map[verb.Type]string{
+			verb.ToBeCalled: "am called",
+		},
+		VerbSuffixes: map[pronoun.Type]string{},
+		Nouns: map[noun.Type]string{
+			noun.Name: "Rafael",
+		},
 	}}
 	for _, sentence := range sentences {
 		for _, language := range languages {
