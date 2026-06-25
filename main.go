@@ -15,6 +15,8 @@ func main() {
 		Pronoun: pronoun.I, Verb: verb.ToBeCalled, Object: noun.PersonName,
 	}, {
 		Pronoun: pronoun.My, Subject: noun.Name, Verb: verb.ToBe, Object: noun.PersonName,
+	}, {
+		Pronoun: pronoun.You, Verb: verb.ToBeCalled, Question: pronoun.How,
 	}}
 	languages := []language.Type{{
 		Pronouns: map[pronoun.Type]string{
