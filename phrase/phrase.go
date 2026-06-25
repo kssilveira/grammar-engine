@@ -13,6 +13,7 @@ import (
 
 type Type struct {
 	Pronoun pronoun.Type
+	Subject noun.Type
 	Verb    verb.Type
 	Object  noun.Type
 }

@@ -3,5 +3,6 @@ package pronoun
 type Type string
 
 const (
-	I Type = "I"
+	I  Type = "I"
+	My Type = "my"
 )

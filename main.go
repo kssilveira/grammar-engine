@@ -11,8 +11,10 @@ import (
 )
 
 func main() {
-	sentences := []phrase.Type{{
-		Pronoun: pronoun.I, Verb: verb.ToBeCalled, Object: noun.Name,
+	phrases := []phrase.Type{{
+		Pronoun: pronoun.I, Verb: verb.ToBeCalled, Object: noun.PersonName,
+	}, {
+		Pronoun: pronoun.My, Subject: noun.Name, Verb: verb.ToBe, Object: noun.PersonName,
 	}}
 	languages := []language.Type{{
 		Pronouns: map[pronoun.Type]string{
@@ -25,7 +27,7 @@ func main() {
 			pronoun.I: "e",
 		},
 		Nouns: map[noun.Type]string{
-			noun.Name: "Rafael",
+			noun.PersonName: "Rafael",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
@@ -36,7 +38,7 @@ func main() {
 		},
 		VerbSuffixes: map[pronoun.Type]string{},
 		Nouns: map[noun.Type]string{
-			noun.Name: "Rafael",
+			noun.PersonName: "Rafael",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
@@ -47,7 +49,7 @@ func main() {
 		},
 		VerbSuffixes: map[pronoun.Type]string{},
 		Nouns: map[noun.Type]string{
-			noun.Name: "Rafael",
+			noun.PersonName: "Rafael",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
@@ -58,7 +60,7 @@ func main() {
 		},
 		VerbSuffixes: map[pronoun.Type]string{},
 		Nouns: map[noun.Type]string{
-			noun.Name: "Rafael",
+			noun.PersonName: "Rafael",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
@@ -69,12 +71,13 @@ func main() {
 		},
 		VerbSuffixes: map[pronoun.Type]string{},
 		Nouns: map[noun.Type]string{
-			noun.Name: "Rafael",
+			noun.PersonName: "Rafael",
 		},
 	}}
-	for _, sentence := range sentences {
+	for _, phrase := range phrases {
+		fmt.Println()
 		for _, language := range languages {
-			fmt.Print(sentence.On(language))
+			fmt.Print(phrase.On(language))
 		}
 	}
 }
