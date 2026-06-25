@@ -108,18 +108,29 @@ func main() {
 		IsUpsideDownQuestionMark: true,
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I:  "eu",
-			pronoun.My: "meu",
+			pronoun.I:   "eu",
+			pronoun.My:  "meu",
+			pronoun.You: "você",
+			pronoun.How: "como",
 		},
 		Verbs: map[verb.Type]string{
 			verb.ToBeCalled: "me chamo",
-			verb.ToBe:       "é",
 		},
 		VerbSuffixes: map[pronoun.Type]string{},
+		VerbsIrregular: map[verb.Type]map[pronoun.Type]string{
+			verb.ToBeCalled: {
+				pronoun.I:   "me chamo",
+				pronoun.You: "se chama",
+			},
+			verb.ToBe: {
+				pronoun.My: "é",
+			},
+		},
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
 			noun.Name:       "nome",
 		},
+		IsQuestionPronounBeforeVerb: true,
 	}}
 	for _, phrase := range phrases {
 		fmt.Println()
