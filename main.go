@@ -62,14 +62,17 @@ func main() {
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
-			pronoun.I: "me",
+			pronoun.I:  "me",
+			pronoun.My: "mi",
 		},
 		Verbs: map[verb.Type]string{
 			verb.ToBeCalled: "llamo",
+			verb.ToBe:       "es",
 		},
 		VerbSuffixes: map[pronoun.Type]string{},
 		Nouns: map[noun.Type]string{
 			noun.PersonName: "Rafael",
+			noun.Name:       "nombre",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
