@@ -19,11 +19,19 @@ type Type struct {
 }
 
 func (t Type) On(l language.Type) string {
-	return strings.Join([]string{
+	words := []string{
 		capitalizeFirst(l.Pronoun(t.Pronoun)),
+		l.Noun(t.Subject),
 		l.Verb(t.Verb, t.Pronoun),
 		l.Noun(t.Object),
-	}, " ") + ".\n"
+	}
+	valid := []string{}
+	for _, word := range words {
+		if word != "" {
+			valid = append(valid, word)
+		}
+	}
+	return strings.Join(valid, " ") + ".\n"
 }
 
 func capitalizeFirst(s string) string {
