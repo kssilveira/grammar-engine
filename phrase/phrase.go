@@ -21,7 +21,7 @@ type Type struct {
 
 func (t Type) On(l language.Type) string {
 	words := [][]string{
-		{capitalizeFirst(l.Pronoun(t.Pronoun)), l.Noun(t.Subject)},
+		{l.Pronoun(t.Pronoun), l.Noun(t.Subject)},
 		l.Verb(t.Verb, t.Pronoun),
 		{l.Noun(t.Object)},
 	}
@@ -33,11 +33,11 @@ func (t Type) On(l language.Type) string {
 		}
 		verb := l.Verb(t.Verb, t.Pronoun)
 		words = [][]string{
-			{capitalizeFirst(l.Pronoun(t.Question)), verb[0], l.Pronoun(t.Pronoun), l.Noun(t.Subject), verb[1]},
+			{l.Pronoun(t.Question), verb[0], l.Pronoun(t.Pronoun), l.Noun(t.Subject), verb[1]},
 		}
 		if l.IsQuestionPronounBeforeVerb && strings.ContainsAny(verb[0], "- ") {
 			words = [][]string{
-				{capitalizeFirst(l.Pronoun(t.Question)), l.Pronoun(t.Pronoun), l.Noun(t.Subject), verb[0], verb[1]},
+				{l.Pronoun(t.Question), l.Pronoun(t.Pronoun), l.Noun(t.Subject), verb[0], verb[1]},
 			}
 		}
 		end = "?"
@@ -49,6 +49,9 @@ func (t Type) On(l language.Type) string {
 				valid = append(valid, word)
 			}
 		}
+	}
+	if len(valid) > 0 {
+		valid[0] = capitalizeFirst(valid[0])
 	}
 	return beginning + strings.Join(valid, " ") + end + "\n"
 }

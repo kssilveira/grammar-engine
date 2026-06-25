@@ -23,6 +23,8 @@ func main() {
 		Subject: noun.Please, Question: pronoun.How,
 	}, {
 		Pronoun: pronoun.I, Verb: verb.ToBe, Object: noun.PersonName,
+	}, {
+		Object: noun.Apology,
 	}}
 	languages := []language.Type{{
 		Pronouns: map[pronoun.Type]string{
@@ -51,6 +53,7 @@ func main() {
 			noun.PersonName: "Rafael",
 			noun.Name:       "Name",
 			noun.Please:     "bitte",
+			noun.Apology:    "entschuldigung",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
@@ -77,6 +80,7 @@ func main() {
 			noun.PersonName: "Rafael",
 			noun.Name:       "name",
 			noun.Please:     "please",
+			noun.Apology:    "apology",
 		},
 	}, {
 		Pronouns: map[pronoun.Type]string{
@@ -103,6 +107,7 @@ func main() {
 			noun.PersonName: "Rafael",
 			noun.Name:       "nom",
 			noun.Please:     "s'il vous plaît",
+			noun.Apology:    "pardon",
 		},
 		IsQuestionPronounBeforeVerb: true,
 	}, {
@@ -130,6 +135,7 @@ func main() {
 			noun.PersonName: "Rafael",
 			noun.Name:       "nombre",
 			noun.Please:     "por favor",
+			noun.Apology:    "disculpa",
 		},
 		IsUpsideDownQuestionMark: true,
 	}, {
@@ -159,6 +165,7 @@ func main() {
 			noun.PersonName: "Rafael",
 			noun.Name:       "nome",
 			noun.Please:     "por favor",
+			noun.Apology:    "desculpa",
 		},
 		IsQuestionPronounBeforeVerb: true,
 	}}
